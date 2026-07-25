@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATTENDO — Offline AI Face Recognition Attendance System</title>
+<meta name="description" content="ATTENDO is an offline AI face recognition attendance system built for schools, colleges and coaching institutes. Fast, private, and reliable — no internet required.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!-- ============ SCROLL PROGRESS BAR ============ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="container navbar__inner">
+    <a href="#top" class="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <rect x="1" y="1" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+          <rect x="18" y="1" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6" opacity="0.35"/>
+          <rect x="1" y="18" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6" opacity="0.35"/>
+          <rect x="18" y="18" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="13" cy="13" r="3.4" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="brand__name">ATTENDO</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#product">Product</a>
+      <a href="#features">Features</a>
+      <a href="#demo">Demo</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="navbar__actions">
+      <a href="#contact" class="btn btn--ghost btn--sm">Contact Us</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__copy reveal">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Offline &middot; On-device &middot; Built for schools</p>
+        <h1 class="hero__title">
+          Attendance that
+          <span class="hero__title-accent">recognises</span>
+          your students —
+          not your Wi-Fi bill.
+        </h1>
+        <p class="hero__subtitle">
+          ATTENDO marks attendance with on-device AI face recognition, right inside the classroom.
+          No internet dependency, no queues, no proxy attendance — just a camera and a second.
+        </p>
+        <div class="hero__actions">
+          <a href="#demo" class="btn btn--primary">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 2.8v10.4a.6.6 0 0 0 .92.5l8.16-5.2a.6.6 0 0 0 0-1L4.92 2.3A.6.6 0 0 0 4 2.8Z" fill="currentColor"/></svg>
+            Watch Demo
+          </a>
+          <a href="#contact" class="btn btn--secondary">Contact Us</a>
+        </div>
+        <div class="hero__meta">
+          <div class="hero__meta-item"><strong>&lt; 1s</strong><span>Recognition time*</span></div>
+          <div class="hero__meta-divider"></div>
+          <div class="hero__meta-item"><strong>0</strong><span>Internet required</span></div>
+          <div class="hero__meta-divider"></div>
+          <div class="hero__meta-item"><strong>2</strong><span>Apps: Android + Web</span></div>
+        </div>
+        <p class="hero__footnote">*Typical on-device recognition time; varies by hardware.</p>
+      </div>
+
+      <div class="hero__visual reveal reveal--delay-1">
+        <div class="scanframe">
+          <span class="scanframe__corner scanframe__corner--tl"></span>
+          <span class="scanframe__corner scanframe__corner--tr"></span>
+          <span class="scanframe__corner scanframe__corner--bl"></span>
+          <span class="scanframe__corner scanframe__corner--br"></span>
+          <span class="scanframe__line"></span>
+          <div class="phone-mock">
+            <div class="phone-mock__notch"></div>
+            <!-- IMAGE REQUIRED: App screenshot, portrait 9:16, showing live camera attendance/recognition screen -->
+            <img class="phone-mock__screen" src="assets/images/app-hero-screen.jpg" alt="ATTENDO Android app recognising a student's face for attendance" loading="lazy">
+          </div>
+          <div class="scanframe__badge">
+            <span class="scanframe__badge-dot"></span> Match found &middot; 98.7%
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOGO / TRUST STRIP ============ -->
+  <section class="trust-strip reveal">
+    <div class="container trust-strip__inner">
+      <p>Designed for institutions that take attendance — and student privacy — seriously.</p>
+      <div class="trust-strip__badges">
+        <span>On-device processing</span>
+        <span>No cloud dependency required</span>
+        <span>Role-based access</span>
+        <span>Audit-logged</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT OVERVIEW ============ -->
+  <section id="product" class="section product">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow--muted">Product overview</p>
+        <h2>One system, two surfaces</h2>
+        <p class="section-head__desc">
+          ATTENDO pairs an Android application used in the classroom with a web dashboard used by administrators —
+          working together, or independently, without depending on an internet connection to function.
+        </p>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card reveal">
+          <div class="product-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="18" r="0.9" fill="currentColor"/></svg>
+          </div>
+          <h3>Android Application</h3>
+          <p>Installed on a classroom tablet or phone. A teacher opens a group, points the camera, and ATTENDO recognises each enrolled student in real time — entirely on-device.</p>
+          <ul class="product-card__list">
+            <li>Live face recognition with anti-spoof detection</li>
+            <li>Works fully offline, syncs when connected</li>
+            <li>Group-wise and student-wise attendance</li>
+          </ul>
+        </div>
+
+        <div class="product-card reveal reveal--delay-1">
+          <div class="product-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Web Dashboard</h3>
+          <p>Used by admins and teachers to manage students, groups, and records — and to review attendance history, exports, and audit trails from any browser.</p>
+          <ul class="product-card__list">
+            <li>Student &amp; group management</li>
+            <li>Attendance records with Excel export</li>
+            <li>Admin controls, roles &amp; audit logs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="how-flow reveal">
+        <div class="how-flow__step"><span>Camera</span></div>
+        <div class="how-flow__arrow" aria-hidden="true">→</div>
+        <div class="how-flow__step"><span>On-device AI match</span></div>
+        <div class="how-flow__arrow" aria-hidden="true">→</div>
+        <div class="how-flow__step"><span>Attendance logged</span></div>
+        <div class="how-flow__arrow" aria-hidden="true">→</div>
+        <div class="how-flow__step"><span>Synced to dashboard</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section id="features" class="section features">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow--muted">Features</p>
+        <h2>Everything a classroom needs, nothing it doesn't</h2>
+        <p class="section-head__desc">Built for the realities of a real school day — spotty connectivity, shared devices, and staff who need things to just work.</p>
+      </div>
+
+      <div class="feature-grid" id="featureGrid">
+        <!-- Feature cards are injected by data below for maintainability, but kept static in markup for SEO/no-JS support -->
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 4a4 4 0 0 1 4 4v2a4 4 0 1 1-8 0V8a4 4 0 0 1 4-4Z" stroke="currentColor" stroke-width="1.6"/><path d="M6 12v1a6 6 0 0 0 12 0v-1M12 19v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3>AI Face Recognition</h3>
+          <p>Recognises enrolled students from a live camera feed and marks attendance automatically.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 1 1 9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 12l3-3M3 12l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Offline Recognition</h3>
+          <p>Runs entirely on-device, so attendance works even without an internet connection.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 6v6c0 5 4 8 9 10 5-2 9-5 9-10V6l-9-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3>Anti-Spoof Detection</h3>
+          <p>Guards against photo and video spoofing attempts to keep attendance records genuine.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c1.2-3.6 4-5.4 7-5.4s5.8 1.8 7 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3>Student Management</h3>
+          <p>Enroll, edit, and organise student profiles with photos used for recognition.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="9" r="2.6" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="9" r="2.6" stroke="currentColor" stroke-width="1.6"/><path d="M3 19c.8-2.8 2.6-4.2 5-4.2S12.2 16.2 13 19M11 19c.8-2.8 2.6-4.2 5-4.2S20.2 16.2 21 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3>Group Management</h3>
+          <p>Organise students into classes or sections for faster, structured attendance sessions.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3>Attendance Records</h3>
+          <p>Every session is logged with timestamps, ready to review by student, group, or date.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0 4-4m-4 4-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3>Excel Export</h3>
+          <p>Export attendance data to Excel in a few clicks for reporting and record-keeping.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 7l8 4 8-4M12 11v10" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3>JSON Backup</h3>
+          <p>Back up student and attendance data locally in a portable, structured format.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3>Web Dashboard</h3>
+          <p>A browser-based control centre for administrators to manage the whole institution.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18 3v4h-4M6 21v-4h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Cloud Synchronisation</h3>
+          <p>Optionally sync device data to the dashboard once a connection becomes available.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.6"/></svg></div>
+          <h3>Offline Queue</h3>
+          <p>Attendance taken offline is queued locally and synced automatically once online.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.6"/></svg></div>
+          <h3>Audit Logs</h3>
+          <p>Every administrative action is recorded, so changes to records stay traceable.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c1.2-3.6 4-5.4 7-5.4s5.8 1.8 7 5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17 3.5a3 3 0 0 1 0 5.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3>Teacher Roles</h3>
+          <p>Teachers get scoped access to take attendance for their own groups only.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 7v6c0 4.5 3.4 7 8 8 4.6-1 8-3.5 8-8V7l-8-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 12.2l1.8 1.8 3.2-3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Admin Controls</h3>
+          <p>Full administrative oversight of users, permissions, groups, and system settings.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v6l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3>Kill Switch</h3>
+          <p>Administrators can remotely disable a device's access if it is lost or misused.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 1 1 3 6.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M4 18v-4h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Restore Data</h3>
+          <p>Recover student and attendance data from a backup when a device is reset or replaced.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3>Real-time Updates</h3>
+          <p>The dashboard reflects newly synced attendance as soon as it's available.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO VIDEO ============ -->
+  <section id="demo" class="section demo">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <p class="eyebrow eyebrow--muted">See it in action</p>
+        <h2>Watch ATTENDO take attendance</h2>
+        <p class="section-head__desc">A short walkthrough of enrollment, live recognition, and the dashboard.</p>
+      </div>
+      <div class="video-frame reveal">
+        <span class="scanframe__corner scanframe__corner--tl"></span>
+        <span class="scanframe__corner scanframe__corner--tr"></span>
+        <span class="scanframe__corner scanframe__corner--bl"></span>
+        <span class="scanframe__corner scanframe__corner--br"></span>
+        <!-- VIDEO REQUIRED: Replace YOUTUBE_VIDEO_ID with your unlisted/public demo video ID -->
+        <div class="video-frame__inner">
+          <iframe
+            src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID"
+            title="ATTENDO Demo Video"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCREENSHOTS GALLERY ============ -->
+  <section id="screenshots" class="section screenshots">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow--muted">Gallery</p>
+        <h2>The app and the dashboard, side by side</h2>
+        <p class="section-head__desc">A closer look at enrollment, live recognition, group views, and reporting.</p>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery__phones reveal">
+          <!-- IMAGE REQUIRED x4: Portrait 9:16 phone screenshots -->
+          <figure class="phone-mock phone-mock--sm">
+            <div class="phone-mock__notch"></div>
+            <img class="phone-mock__screen" src="assets/images/app-enroll.jpg" alt="Student enrollment screen in the ATTENDO app" loading="lazy">
+            <figcaption>Enroll a student</figcaption>
+          </figure>
+          <figure class="phone-mock phone-mock--sm phone-mock--raised">
+            <div class="phone-mock__notch"></div>
+            <img class="phone-mock__screen" src="assets/images/app-recognition.jpg" alt="Live face recognition screen in the ATTENDO app" loading="lazy">
+            <figcaption>Live recognition</figcaption>
+          </figure>
+          <figure class="phone-mock phone-mock--sm">
+            <div class="phone-mock__notch"></div>
+            <img class="phone-mock__screen" src="assets/images/app-groups.jpg" alt="Group management screen in the ATTENDO app" loading="lazy">
+            <figcaption>Groups &amp; classes</figcaption>
+          </figure>
+        </div>
+
+        <div class="gallery__dashboard reveal reveal--delay-1">
+          <!-- IMAGE REQUIRED: Dashboard screenshot, wide/landscape aspect ratio, browser chrome optional -->
+          <div class="browser-mock">
+            <div class="browser-mock__bar">
+              <span></span><span></span><span></span>
+              <div class="browser-mock__url">dashboard.attendo.app</div>
+            </div>
+            <img class="browser-mock__screen" src="assets/images/dashboard-overview.jpg" alt="ATTENDO web dashboard showing attendance overview" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS (TIMELINE) ============ -->
+  <section id="how-it-works" class="section timeline-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow--muted">How it works</p>
+        <h2>From account approval to reports, in six steps</h2>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline__item reveal">
+          <div class="timeline__marker">01</div>
+          <div class="timeline__body">
+            <h3>Account Approval</h3>
+            <p>Your institution's admin account is verified and approved to get started.</p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <div class="timeline__marker">02</div>
+          <div class="timeline__body">
+            <h3>Student Enrollment</h3>
+            <p>Students are enrolled once with a photo, so the app can recognise them going forward.</p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <div class="timeline__marker">03</div>
+          <div class="timeline__body">
+            <h3>Group Management</h3>
+            <p>Students are organised into classes, sections, or batches for structured sessions.</p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <div class="timeline__marker">04</div>
+          <div class="timeline__body">
+            <h3>Attendance</h3>
+            <p>Teachers open a group and let the camera recognise each student — offline, instantly.</p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <div class="timeline__marker">05</div>
+          <div class="timeline__body">
+            <h3>Reports</h3>
+            <p>Attendance is compiled automatically, ready to export or review whenever needed.</p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <div class="timeline__marker">06</div>
+          <div class="timeline__body">
+            <h3>Dashboard</h3>
+            <p>Admins get a full, synced view across every group, class, and device.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="section faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow--muted">FAQ</p>
+        <h2>Questions administrators usually ask</h2>
+      </div>
+
+      <div class="accordion" id="accordion">
+        <div class="accordion__item reveal">
+          <button class="accordion__trigger" aria-expanded="false">
+            <span>Does ATTENDO need internet to work?</span>
+            <svg class="accordion__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="accordion__panel"><p>No. Face recognition and attendance marking run entirely on-device. An internet connection is only used, optionally, to sync data to the web dashboard.</p></div>
+        </div>
+        <div class="accordion__item reveal">
+          <button class="accordion__trigger" aria-expanded="false">
+            <span>How is student data stored?</span>
+            <svg class="accordion__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="accordion__panel"><p>Data is stored locally on the device by default, with JSON backups and optional synchronisation to your institution's dashboard when connected.</p></div>
+        </div>
+        <div class="accordion__item reveal">
+          <button class="accordion__trigger" aria-expanded="false">
+            <span>Can someone spoof attendance with a photo?</span>
+            <svg class="accordion__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="accordion__panel"><p>ATTENDO includes anti-spoof detection designed to identify photo and video-based spoofing attempts during recognition.</p></div>
+        </div>
+        <div class="accordion__item reveal">
+          <button class="accordion__trigger" aria-expanded="false">
+            <span>What devices does the app run on?</span>
+            <svg class="accordion__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="accordion__panel"><p>The ATTENDO app runs on Android tablets and phones. The dashboard is web-based and works in any modern browser.</p></div>
+        </div>
+        <div class="accordion__item reveal">
+          <button class="accordion__trigger" aria-expanded="false">
+            <span>Can teachers only see their own classes?</span>
+            <svg class="accordion__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="accordion__panel"><p>Yes. Role-based access means teachers see only their assigned groups, while admins have full oversight and control.</p></div>
+        </div>
+        <div class="accordion__item reveal">
+          <button class="accordion__trigger" aria-expanded="false">
+            <span>How do we get started?</span>
+            <svg class="accordion__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="accordion__panel"><p>Reach out through the contact section below with your institution's details, and we'll walk you through setup and onboarding.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="contact-panel reveal">
+        <div class="contact-panel__left">
+          <p class="eyebrow eyebrow--muted">Get in touch</p>
+          <h2>Bring ATTENDO to your institution</h2>
+          <p class="contact-panel__desc">Tell us a little about your school or institute. We'll get back to you with a walkthrough and next steps — no commitment required.</p>
+
+          <div class="contact-links">
+            <!-- CONTACT PLACEHOLDER: WhatsApp number -->
+            <a class="contact-link" href="https://wa.me/<WHATSAPP_NUMBER_PLACEHOLDER>" target="_blank" rel="noopener">
+              <span class="contact-link__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-3.3-.8-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.4.8-.4h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.2.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.2-.3.3-.1.6.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.1.5.1.7-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.2.1.7-.1 1.3Z"/></svg></span>
+              <span>WhatsApp</span>
+            </a>
+            <!-- CONTACT PLACEHOLDER: Email address -->
+            <a class="contact-link" href="mailto:<EMAIL_PLACEHOLDER>">
+              <span class="contact-link__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="4.5" width="19" height="15" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m3 6 9 6.5L21 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span>Email Us</span>
+            </a>
+            <!-- CONTACT PLACEHOLDER: GitHub repo/org -->
+            <a class="contact-link" href="https://github.com/<GITHUB_PLACEHOLDER>" target="_blank" rel="noopener">
+              <span class="contact-link__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.3-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.6 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 4.9 0c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7 1 .7 2v3c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg></span>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-row">
+            <label for="cf-institute">Institution</label>
+            <input id="cf-institute" name="institute" type="text" placeholder="School / College / Institute" required>
+          </div>
+          <div class="form-row">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" placeholder="you@school.edu" required>
+          </div>
+          <div class="form-row">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="4" placeholder="Tell us about your institution and requirements"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">Send Message</button>
+          <p class="contact-form__note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="brand__name">ATTENDO</span>
+      <p>Offline AI face recognition attendance, built for schools.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Company</h4>
+      <a href="#product">Product</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <a href="mailto:<EMAIL_PLACEHOLDER>">Email</a>
+      <a href="https://wa.me/<WHATSAPP_NUMBER_PLACEHOLDER>" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://github.com/<GITHUB_PLACEHOLDER>" target="_blank" rel="noopener">GitHub</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>System</h4>
+      <span class="footer__version">Version 1.0.0</span>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; <span id="year"></span> ATTENDO. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M8 12.5V3.5M3.5 8L8 3.5 12.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
