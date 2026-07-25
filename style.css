@@ -360,11 +360,16 @@ p{ margin:0; }
 
 /* =========================================================
    SCROLL REVEAL
+   Text is visible by default. It only ever gets hidden-then-
+   animated-in if script.js successfully confirms it's running
+   (adds "js-ready" to <html>). This means a JS load failure,
+   a blocked script, or no-JS never results in invisible text.
    ========================================================= */
-.reveal{ opacity:0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.is-visible{ opacity:1; transform: translateY(0); }
-.reveal--delay-1.is-visible{ transition-delay: .12s; }
-.reveal--delay-2.is-visible{ transition-delay: .24s; }
+.reveal{ opacity:1; transform:none; }
+.js-ready .reveal{ opacity:0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+.js-ready .reveal.is-visible{ opacity:1; transform: translateY(0); }
+.js-ready .reveal--delay-1.is-visible{ transition-delay: .12s; }
+.js-ready .reveal--delay-2.is-visible{ transition-delay: .24s; }
 
 /* =========================================================
    RESPONSIVE
