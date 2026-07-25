@@ -1,5 +1,5 @@
 /* =========================================================
-   ATTENDO — script.js
+   SenTree — script.js
    Vanilla JS only. No dependencies.
    ========================================================= */
 // Runs immediately (script is placed at end of body, so the DOM is already
