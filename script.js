@@ -108,29 +108,56 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------- Contact form ---------- */
-  // NOTE: This is a static site (GitHub Pages). There is no backend here.
-  // Wire this up to a form service (Formspree, Getform, EmailJS, etc.)
-  // or your own endpoint before going live. This handler currently just
-  // gives the visitor confirmation feedback client-side.
+  // Static site (GitHub Pages), so submissions are sent via Formspree —
+  // a free form-backend service that forwards each submission straight
+  // to your Gmail inbox. No server code required.
+  //
+  // SETUP REQUIRED (do this once):
+  // 1. Create a free form at https://formspree.io
+  // 2. Enter your Gmail address as the destination and verify it
+  //    (Formspree emails you a confirmation link — click it)
+  // 3. Copy the Form ID Formspree gives you (looks like "mzbqwepr")
+  // 4. Paste it into FORMSPREE_FORM_ID below, replacing the placeholder
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xppawyyl';
+
   const contactForm = document.getElementById('contactForm');
   const formNote = document.getElementById('formNote');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (!formNote) return;
 
-      // TODO: replace with a real submission (fetch to Formspree/your API)
-      // Example:
-      // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-      //   method: 'POST',
-      //   headers: { 'Accept': 'application/json' },
-      //   body: new FormData(contactForm)
-      // });
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+      formNote.style.color = '';
+      formNote.textContent = '';
 
-      if (formNote) {
-        formNote.textContent = "Thanks — your message is ready to send. Connect this form to your email service to go live.";
+      try {
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(contactForm)
+        });
+
+        if (response.ok) {
+          formNote.style.color = 'var(--verify)';
+          formNote.textContent = "Thanks — your message has been sent. We'll get back to you shortly.";
+          contactForm.reset();
+        } else {
+          const data = await response.json().catch(() => null);
+          formNote.style.color = '#C0392B';
+          formNote.textContent = (data && data.errors)
+            ? data.errors.map((err) => err.message).join(', ')
+            : 'Something went wrong sending your message. Please try again or email us directly.';
+        }
+      } catch (err) {
+        formNote.style.color = '#C0392B';
+        formNote.textContent = 'Network error — please check your connection and try again.';
+      } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalBtnText; }
       }
-      contactForm.reset();
     });
   }
 
